@@ -73,12 +73,55 @@ Collaborative storytelling testbed where two humans and a robot (Sam) take turns
   </tr>
 </table>
 
-### Experiments and Results
+### Experimental Results
 
-To validate M2RL, we evaluated state-of-the-art imitation learning algorithms, namely Behavior Cloning (BC) and Diffusion Policy (DP), on two benchmarks:
+<h3 align="center">Performance Summary on RLBench-COLLAB</h3>
+<p align="center"><i>Task Success (TS↑), #Subtasks (↑), Subtask Success (STS↑)</i></p>
 
-**1. Multimodal Interface Benchmark:** We compared the algorithms' performance when trained on demos from a single interface (gamepad) vs all three interfaces. Results showed that both BC and DP (especially DP) achieved lower prediction errors when trained on multimodal interface data. This underscores the importance of collecting demos from diverse interfaces to improve policy robustness.
+<table align="center">
+  <tr>
+    <th rowspan="2">Model</th>
+    <th colspan="6">Sequential Coordination</th>
+    <th colspan="9">Coupled Interaction</th>
+  </tr>
+  <tr>
+    <th colspan="3">Stack Blocks</th>
+    <th colspan="3">Pyramid Stacking</th>
+    <th colspan="3">Put in Saucepan</th>
+    <th colspan="3">Push Box Target</th>
+    <th colspan="3">Put in Drawer</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+  </tr>
+  <tr>
+    <td><b>Centralized Planner (Oracle)</b></td>
+    <td><b>0.80</b></td><td>10.9</td><td><b>1.00</b></td>
+    <td><b>0.60</b></td><td>11.0</td><td><b>0.90</b></td>
+    <td><b>0.80</b></td><td><b>8.0</b></td><td><b>0.93</b></td>
+    <td><b>1.00</b></td><td><b>16.0</b></td><td><b>1.00</b></td>
+    <td><b>1.00</b></td><td><b>10.0</b></td><td><b>1.00</b></td>
+  </tr>
+  <tr>
+    <td>VoxPoser</td>
+    <td>0.00</td><td>10.0</td><td>0.68</td>
+    <td>0.00</td><td><b>11.8</b></td><td>0.36</td>
+    <td>0.50</td><td>7.0</td><td>0.79</td>
+    <td>0.00</td><td>11.2</td><td>0.76</td>
+    <td>0.00</td><td>9.0</td><td>0.55</td>
+  </tr>
+  <tr>
+    <td><b>PRISM (Ours)</b></td>
+    <td><b>0.80</b></td><td><b>11.0</b></td><td>0.94</td>
+    <td><b>0.60</b></td><td>11.0</td><td>0.83</td>
+    <td>0.70</td><td><b>8.0</b></td><td>0.81</td>
+    <td>0.70</td><td>14.0</td><td>0.72</td>
+    <td>0.50</td><td>8.0</td><td>0.82</td>
+  </tr>
+</table>
 
-**2. Multimodal Data Benchmark:** We compared the algorithms' performance when trained on a single RGB+D stream (wrist camera) vs all three streams. DP's performance improved with more camera streams for most tasks, while BC's errors increased. This suggests multimodal data can improve task performance if algorithms can effectively extract relevant cross-modal representations (e.g. using an attention or denoising mechanism like in DP).
-
-M2RL dataset takes a step towards aligning robot imitation learning setups with how humans learn—leveraging multimodal cues and diverse experiences. Our experiments demonstrate the benefits of learning from diverse interfaces and multimodal data to improve manipulation task performance. We hope M2RL enables further research into effective robot learning from human demonstrations.
