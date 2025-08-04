@@ -16,11 +16,10 @@ Multi‑agent systems hold the promise of distributed, parallel execution in dom
 
 Collaborative storytelling testbed where two humans and a robot (Sam) take turns building a story. Sam uses an MDP with LLM-based preference estimation to select reward-maximizing actions. The interface displays available words, turn order, and points to support and evaluate adaptive collaboration.
 
-<figure>
-<img src="./images/illustrative_example.png" width="100%" height="100%" align="center">
-
-<figcaption style="display: block; margin: auto; text-align: center; font-size:12;"> Collaborative Storytelling Testbed</figcaption>
-</figure>
+<p align="center">
+  <img src="./images/prism_framework.png" width="60%">
+</p>
+6
 
 ### PRISM Architecture
 
