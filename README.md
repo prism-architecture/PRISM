@@ -24,13 +24,11 @@ Collaborative storytelling testbed where two humans and a robot (Sam) take turns
   <img src="./images/prism_framework.png" width="60%">
 </p>
 
-### 🎥 Successful Task Execution Results
+### Successful Task Execution Results
 
-[![Watch the demo](./images/push_box_thumb.png)](https://raw.githubusercontent.com/aaai2026-review/preference-aware/main/videos/push_box.mp4)
-
-<sub><sup>Click the image above to view the push-box execution video.</sup></sub>
-
----
+<p align="center">
+  <img src="./images/push_box.gif" width="60%">
+</p>
 
 ### Experiments and Results
 
