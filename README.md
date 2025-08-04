@@ -29,7 +29,7 @@ Collaborative storytelling testbed where two humans and a robot (Sam) take turns
 <table>
   <tr>
     <td align="center">
-      <img src="./images/stack_blocks.gif" width="160px"><br/>
+      <img src="./images/stack_block.gif" width="160px"><br/>
       Stack Blocks
     </td>
     <td align="center">
