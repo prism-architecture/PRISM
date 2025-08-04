@@ -28,31 +28,14 @@ Collaborative storytelling testbed where two humans and a robot (Sam) take turns
 </p>
 
 
-#### Dataset Structure:
-The collaborative story dataset is available on [Story Dataset](https://github.com/aaai2026-review/preference-aware/tree/main/story_dataset/)
+#### Successful Task Execution Results
 
-```
-raw_data
-    |- baseline_sessions
-        |-session_1.json
-        |-session_2.json
-         ...
-    |- proposed_sessions
-        |-session_1.json
-        |-session_2.json
-         ...
-
-session_wise_processed_stories
-    |- session_1
-        |-baseline_method.txt
-        |-preference_aware_method.txt
-
-    |- session_2
-        |-baseline_method.txt
-        |-preference_aware_method.txt
-    ...
-         
-```
+<div style="display: flex; justify-content: center;">
+  <video controls style="max-width: 60%; height: auto;" autoplay muted loop>
+    <source src="./videos/push_box.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 ### Experiments and Results
 
