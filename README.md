@@ -1,4 +1,4 @@
-[**Website**](https://github.com/aaai2026-review/preference-aware/)
+[**Website**](https://github.com/prism-architecture/PRISM)
 | [**Code**](https://github.com/aaai2026-review/preference-aware/tree/main/Code/)
 
 
