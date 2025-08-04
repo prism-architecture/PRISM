@@ -75,7 +75,6 @@ Collaborative storytelling testbed where two humans and a robot (Sam) take turns
 
 ### Experimental Results
 
-<h3 align="center">Performance Summary on RLBench-COLLAB</h3>
 <p align="center"><i>Task Success (TS↑), #Subtasks (↑), Subtask Success (STS↑)</i></p>
 
 <table align="center">
@@ -124,4 +123,52 @@ Collaborative storytelling testbed where two humans and a robot (Sam) take turns
     <td>0.50</td><td>8.0</td><td>0.82</td>
   </tr>
 </table>
+
+<table align="center">
+  <tr>
+    <th rowspan="2">Model</th>
+    <th colspan="6">Parallel Coordination</th>
+    <th colspan="9">Behavior-Aware Reasoning</th>
+  </tr>
+  <tr>
+    <th colspan="3">Sort Items</th>
+    <th colspan="3">Push Buttons</th>
+    <th colspan="3">Insert Rings</th>
+    <th colspan="3">Shell Game</th>
+    <th colspan="3">Handover Item</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+    <td>TS</td><td>#ST</td><td>STS</td>
+  </tr>
+  <tr>
+    <td><b>Centralized Planner (Oracle)</b></td>
+    <td><b>0.90</b></td><td>10.0</td><td><b>0.99</b></td>
+    <td><b>1.00</b></td><td><b>8.0</b></td><td><b>1.00</b></td>
+    <td><b>1.00</b></td><td>8.0</td><td><b>1.00</b></td>
+    <td><b>0.90</b></td><td>9.4</td><td><b>0.98</b></td>
+    <td><b>1.00</b></td><td><b>12.0</b></td><td><b>1.00</b></td>
+  </tr>
+  <tr>
+    <td>VoxPoser</td>
+    <td>0.40</td><td><b>10.2</b></td><td>0.74</td>
+    <td>0.30</td><td>8.0</td><td>0.40</td>
+    <td>0.00</td><td>12.8</td><td>0.13</td>
+    <td>0.00</td><td><b>14.5</b></td><td>0.58</td>
+    <td>0.00</td><td>10.0</td><td>0.46</td>
+  </tr>
+  <tr>
+    <td><b>PRISM (Ours)</b></td>
+    <td><b>0.90</b></td><td>10.0</td><td>0.98</td>
+    <td><b>1.00</b></td><td><b>8.0</b></td><td><b>1.00</b></td>
+    <td>0.60</td><td><b>15.0</b></td><td>0.95</td>
+    <td>0.70</td><td>13.0</td><td>0.96</td>
+    <td>0.70</td><td><b>12.0</b></td><td>0.91</td>
+  </tr>
+</table>
+
 
