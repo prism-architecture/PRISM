@@ -1,0 +1,56 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+venv/
+.env/
+__pycache__/
+
+# Compiled source
+*.pyc
+*.o
+*.so
+*.out
+
+# Backup files
+*~
+*.swp
+*.bak
+
+# Python virtual environment
+.env/
+.venv/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Test coverage
+coverage/
+*.cover
+*.lcov
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+/data
+/images
+/source/temp
+
+
+# # Misc
+# *.zip
+# *.tar.gz
+# *.rar
+# *.7z

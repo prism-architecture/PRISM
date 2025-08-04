@@ -8,7 +8,7 @@ task_registry = {
     "stack_blocks": {
         "query": "stack the red block on top of the yellow block",
         "object_list": ["red block", "yellow block", "stacking plane"],
-        "env_class": "StackBlocks",
+        "env_class": "MultiStackBlocks",
         "prompt_yaml": f"{prompt_dir}/stack_blocks.yaml",
     },
     "pyramid_stacking": {
