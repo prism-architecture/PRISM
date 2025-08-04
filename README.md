@@ -12,16 +12,17 @@ Multi‑agent systems hold the promise of distributed, parallel execution in dom
 
 ### RLBench-COLLAB Task Suite
 
-Collaborative storytelling testbed where two humans and a robot (Sam) take turns building a story. Sam uses an MDP with LLM-based preference estimation to select reward-maximizing actions. The interface displays available words, turn order, and points to support and evaluate adaptive collaboration.
+We introduce RLBench-COLLAB—a ten-task benchmark spanning four categories: Sequential, Parallel, Coupled, and Behavior-Aware, each testing language grounding, subtask scheduling, and inter-agent synchronization.
 
 <p align="center">
-  <img src="./images/rlbench_task_suit.png" width="80%">
+  <img src="./images/rlbench_task_suit.png" width="60%">
 </p>
 
 ### PRISM Architecture
+We propose PRISM: Planning and Reasoning in Synchronized Multi-agent tasks.
 
 <p align="center">
-  <img src="./images/prism_framework.png" width="60%">
+  <img src="./images/prism_framework.png" width="80%">
 </p>
 
 ### Successful Task Execution Results
