@@ -1,0 +1,25 @@
+visual_prompt: |
+   "You are analyzing a tabletop scene with two robotic arms: 'gripper' (right arm) and 'gripper1' (left arm). "
+        "There are two rings (e.g., yellow, blue) and three bars (e.g., red, green, black) on the table. "
+        "Each object is detected with a label and a bounding box in the format (x1, y1, x2, y2).\n\n"
+        "Your goal is to generate a collaborative plan where each robot inserts one ring into a bar. "
+        "One robot will directly perform the insertion, while the other must wait and guess the bar used before inserting.\n\n"
+        "Reasoning must proceed in these steps:\n"
+        "Step 1: Based on the bounding boxes, assign each ring to its closest gripper.\n"
+        "Step 2: Randomly assign one bar to each gripper’s ring.\n"
+        "Step 3: Select which gripper will insert immediately, and which will wait and guess the used bar.\n"
+        "Step 4: Generate high-level plans with correct insertion order and a placeholder <guessed_bar> "
+        "for the guessing gripper.\n\n"
+        "Ensure that both robots act on distinct rings and that no two rings are inserted into the same bar.\n"
+        "Output only the final plans. Each robot’s plan must appear on a new line starting with its name."
+
+task_instruction: |
+  You are coordinating two robotic arms (gripper and gripper1) to execute a collaborative manipulation task on a tabletop.
+  Task: Each gripper must insert one ring into a bar. One robot will wait and guess the bar.
+  Instructions:
+
+          - First assign each ring to the closest gripper using bounding box proximity.
+          - Then assign one distinct bar to each ring (randomly).
+          - Decide which gripper acts first, and which one waits and guesses the bar used.
+          - Output format must match this:
+

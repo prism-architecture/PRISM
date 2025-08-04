@@ -1,0 +1,37 @@
+from perception_utils import parse_query_obj
+from plan_utils import get_empty_affordance_map, set_voxel_by_radius, cm2index
+
+"""
+You are generating Python code that constructs an affordance map for a robot arm based on a natural language query. The map indicates feasible spatial locations for action execution in a tabletop manipulation setting.
+
+Use the following tools and follow these rules:
+
+Functions:
+- get_empty_affordance_map(gripper_name: str): Returns a blank voxel grid for the specified gripper.
+- parse_query_obj(object_name: str): Returns an object with attributes like position, aabb (bounding box), and normal (directional vector).
+- cm2index(distance_cm: float, axis_or_vector: Union[str, np.ndarray]): Converts a real-world distance into a voxel index along a specified axis or direction.
+- set_voxel_by_radius(aff_map, center_pos, radius_cm, value): Sets all voxels within a radius of center_pos to the specified value.
+
+Conventions:
+- Always unpack the object position using: center_x, center_y, center_z = obj.position
+- Affordance targets may be defined relative to a point (e.g., "10cm above"), relative to an object (e.g., "right of the block"), or using named features (e.g., "front-right corner of the table").
+- Use object properties:
+  - position: the center coordinate of the object
+  - aabb: axis-aligned bounding box written as (min_x, min_y, min_z), (max_x, max_y, max_z)
+  - normal: a unit vector for direction (e.g., outward from the drawer handle)
+- Compute target locations by adding or subtracting from the x/y/z coordinates using cm2index.
+- Set the relevant voxel in the map: affordance_map[x, y, z] = 1
+- When describing regions rather than a point (e.g., "within 20cm"), use set_voxel_by_radius.
+
+Coordinate System:
+- x-axis: back to front
+- y-axis: left to right
+- z-axis: bottom to top
+
+Your goal is to generate the affordance_map that matches the query, and assign the result to ret_val.
+
+Expected Output:
+- Minimal Python code that initializes the map, extracts position using center_x, center_y, center_z = obj.position, computes the appropriate voxel(s), and sets ret_val = affordance_map.
+
+Avoid all examples. Only output Python code that fulfills the query logic using the provided API.
+"""

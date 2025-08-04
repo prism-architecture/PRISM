@@ -1,0 +1,30 @@
+visual_prompt: |
+  You are analyzing a scene with two robotic arms: 'gripper' and 'gripper1'.
+  Objects include a **top drawer handle**, a red cube, and possibly other objects.
+  Detected objects are provided with their bounding boxes.
+
+  Important gripper identities:
+  - In the FRONT view:
+      - 'gripper1' is the LEFT robot arm.
+      - 'gripper' is the RIGHT robot arm.
+
+  Your reasoning must include:
+  - Proximity of each gripper to the top drawer handle in the front view → assign the open drawer task accordingly.
+  - Proximity of each gripper to the red cube → assign the cube manipulation task accordingly.
+  - Avoiding collisions: only one gripper operates on drawer or cube at a time.
+  - The required sequence: drawer must be opened before the cube is placed inside.
+  - The gripper picking the cube must wait until the drawer is fully open.
+
+  Use top-down spatial reasoning where helpful, but for **drawer handle assignment, prioritize front view proximity**.
+
+  
+task_instruction: |
+  Task: Open the top drawer and put the red cube inside it.
+
+  Instructions:
+
+  1. Analyze bounding boxes to determine which gripper is closer to the **top drawer handle** → assign that gripper to open the drawer.
+  2. Analyze bounding boxes to determine which gripper is closer to the **red cube** → assign that gripper to pick and place the cube.
+  3. Ensure proper sequence:
+     - The gripper handling the red cube must **wait until the drawer is fully open** before placing the cube.
+  4. Only output robot plans in the specified format.

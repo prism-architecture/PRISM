@@ -1,0 +1,38 @@
+visual_prompt: |
+  You are analyzing a tabletop scene with two robotic arms: 'gripper' and 'gripper1'.
+  Objects include a saucepan with a lid, a red cube, and possibly other objects.
+  Each object is detected with its label and bounding box (x1, y1, x2, y2).
+
+  Important gripper identities:
+  - In the FRONT view:
+      - 'gripper1' is the LEFT robot arm.
+      - 'gripper' is the RIGHT robot arm.
+
+  You must reason about:
+  - Proximity between grippers and objects, using the above gripper identities.
+  - Feasible assignment of one object (lid or cube) per gripper.
+  - Avoiding collision: ensure only one gripper operates on a given object at a time.
+  - The required sequence: lid must be opened before cube can be placed.
+  - Use top-down spatial layout (from bounding boxes) to reason about assignments.
+
+  Output natural language high-level plans. Each robot gets one line, starting with its name.
+
+task_instruction: |
+  You are coordinating two robotic arms (gripper and gripper1) to perform the following task:
+
+  Task Description:
+  - One gripper should open the lid of the saucepan.
+  - The other gripper should pick the red cube, wait until the lid is open, and then place the red cube inside the saucepan.
+
+  Instructions:
+
+  Step 1: Analyze bounding boxes to determine which gripper is closer to which object (lid, red cube).
+  Step 2: Assign one gripper to open the lid, and the other to handle the red cube, based on proximity.
+  Step 3: Plan the actions for each gripper **so that they begin working in parallel if possible**:
+  - If there is no risk of collision, both grippers can move at the same time.
+  - The gripper handling the red cube must **wait until the lid is fully open** before placing the cube.
+
+  You must reason dynamically — do not assume 'gripper1' always handles the lid.
+  Use this gripper identity mapping for reasoning:
+  - 'gripper1' is the LEFT robot arm.
+  - 'gripper' is the RIGHT robot arm.

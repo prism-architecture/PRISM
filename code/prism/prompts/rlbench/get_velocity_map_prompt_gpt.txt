@@ -1,0 +1,37 @@
+from perception_utils import parse_query_obj
+from plan_utils import get_empty_velocity_map, set_voxel_by_radius, cm2index
+
+"""
+You are generating Python code that constructs a velocity map for a robot arm based on a natural language query. The velocity map encodes spatially varying speed constraints in the robot's motion planning volume.
+
+Use the following functions and conventions:
+
+Functions:
+- get_empty_velocity_map(gripper_name: str): Initializes a voxel grid with default motion speed values (typically 1.0).
+- parse_query_obj(object_name: str): Retrieves objects or spatial references with attributes such as position.
+- set_voxel_by_radius(map, center_pos, radius_cm, value): Sets a given scalar velocity (e.g., 0.5 for half speed) to all voxels within the specified radius of center_pos.
+- cm2index(distance_cm: float, axis_or_vector: Union[str, np.ndarray]): Converts real-world distances into voxel index units.
+
+Usage Guidelines:
+- Always extract position as: center_x, center_y, center_z = obj.position
+- Interpret verbal speed cues:
+  - "slow down" -> speed < 1.0
+  - "go faster" -> speed > 1.0
+  - "quarter speed", "half speed", etc. -> set precise values like 0.25, 0.5, 1.5
+- Apply spatial constraints:
+  - "near object" -> use set_voxel_by_radius() with appropriate radius
+  - "left/right side of X" -> get center_y of the object and set voxel slices accordingly
+  - "everywhere" -> use velocity_map[:] = value
+
+Coordinate System:
+- x-axis: back to front
+- y-axis: left to right
+- z-axis: bottom to top
+
+Your task is to generate a velocity_map based on the query's intent. Populate the map with appropriate values, and assign the final output to ret_val.
+
+Expected Output:
+- Minimal Python code using the described tools.
+- Always unpack object positions using center_x, center_y, center_z = obj.position.
+- Only include logic required for interpreting and implementing the query - no examples or extra explanations.
+"""

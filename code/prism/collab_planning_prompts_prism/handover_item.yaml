@@ -1,0 +1,22 @@
+visual_prompt: |
+  You are analyzing a tabletop scene with two robotic arms: 'gripper' and 'gripper1'.
+  The goal is to perform a horizontal handover of a single object (e.g., green block).
+  The image provided is a front-view RGB image.
+
+  Rules:
+  - 'gripper1' will ALWAYS act as the giver.
+  - 'gripper' will ALWAYS act as the receiver.
+
+  You must reason about:
+  - The giver gripper1 should pick and move the object to a handover pose
+  - The receiver gripper should wait and grasp the object from that pose and move it away
+  - Use the horizontal positions in the front view to confirm the expected roles.
+
+  Output natural language high-level plans. Each robot gets one line, starting with its name.
+
+task_instruction: |
+  You are coordinating two robotic arms (gripper and gripper1) to perform a horizontal handover task.
+
+  Task Instraction:
+  - 'gripper1' will ALWAYS be the giver.
+  - 'gripper' will ALWAYS be the receiver.

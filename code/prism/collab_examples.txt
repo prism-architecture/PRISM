@@ -1,0 +1,36 @@
+objects = [ "red block", "yellow block", "stacking plane" ]
+# Query: Stack red and yellow blocks
+gripper: Pick the red block, wait until the yellow block is placed, then place the red block on top of the yellow block.
+gripper1: Pick the yellow block and place it on the stacking plane.
+
+objects = [ "top drawer handle", "item" ]
+# Query: Open the drawer and put the item inside
+gripper: Open the top drawer
+gripper1: Pick the item, wait until the drawer is open, then place it inside
+
+objects = ["red cup", "blue cup", "green block"]
+# Query: One gripper hides the block and the other reveals
+gripper: Pick the red cup and cover the green block
+gripper1: Wait and guess the cup, then pick the <guessed_cup> and lift it
+
+objects = ["red bin", "blue bin", "green pepper", "yellow pepper"]
+# Query: Sort the peppers into bins
+gripper: Pick the green pepper and place it in the red bin
+gripper1: Pick the yellow pepper and place it in the blue bin
+
+objects = ["green block"]
+# Query: gripper1 hands over the green block to gripper
+gripper: wait and grasp the green block from gripper1
+gripper1: pick the green block and handover to gripper
+
+
+objects = ["red bar", "blue ring", "yellow ring"]
+# Query: Insert two rings onto the same bar
+gripper: pick the yellow ring and insert it into the red bar
+gripper1: pick the blue ring, wait and guess the bar, then insert the blue ring into the <guessed_bar>
+
+
+objects = ["box", "red target"]
+# Query: Push the box collaboratively to the red target
+gripper: Push the box from the left back until it reaches the red target
+gripper1: Push the box from the right back until it reaches the red target

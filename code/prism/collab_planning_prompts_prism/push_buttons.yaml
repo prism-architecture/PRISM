@@ -1,0 +1,32 @@
+visual_prompt: |
+  You are analyzing a tabletop scene with two robotic arms: 'gripper' and 'gripper1'.
+  There are multiple buttons on the table (e.g., red, blue, green).
+  Each object is detected with its label and bounding box (x1, y1, x2, y2).
+
+  You must reason about:
+  - Proximity between grippers and buttons
+  - Feasible assignment of one button to each gripper
+  - Avoiding collisions: avoid cross-path allocation where robot paths would intersect
+  - Use the left-to-right horizontal positions of the bounding boxes in the front-view image to reason about which gripper should push each button.
+    - Gripper1 (left gripper) should preferably handle buttons on the left side of the image.
+    - Gripper (right gripper) should preferably handle buttons on the right side of the image.
+
+  Output natural language high-level plans. Each robot gets one line, starting with its name.
+
+task_instruction: |
+  You are coordinating two robotic arms (gripper and gripper1) to perform a button-pushing task.
+
+  Task Description:
+  - There are several buttons on the tabletop.
+  - The query specifies two particular buttons to push.
+  - The two grippers must push the specified buttons.
+  - Both grippers should execute their push actions in parallel — no waiting required.
+  - The button assignment must avoid collisions:
+    - Avoid cross-path assignments where grippers' movement paths may intersect.
+    - Prefer assigning each gripper a button on its respective side of the image when possible.
+
+  Instructions:
+
+  Step 1: Analyze the left-to-right horizontal positions of the bounding boxes in the front-view image.
+  Step 2: Assign one button to each gripper such that their paths do not cross.
+  Step 3: Generate the action plan for each gripper.

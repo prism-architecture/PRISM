@@ -1,0 +1,181 @@
+objects = ['frypan', frypan lid', 'butter']
+# Query: Open the frypan lid
+grasp the frypan lid
+move to default pose
+# done
+
+
+objects = ["top drawer", "top handle", "cube"]
+# Query: Open the top drawer using the handle
+turn 90 degree along the x-axis
+move to the center of handle top
+close gripper
+move 20cm right from the handle top
+# done
+
+
+objects = ['tissue', 'bowl']
+# Query: Place the tissue next to the bowl
+grasp the tissue
+move to default pose
+move to 10cm to the right of the bowl
+open gripper
+move to default pose
+# done
+
+objects = ['grape', 'tray']
+# Query: Place the grape into the tray
+grasp the grape
+move to default pose
+move to 5cm top of the tray
+open gripper
+move to default pose
+# done
+
+
+
+objects = ['red bar', 'black bar', 'green bar', 'blue bar', 'yellow ring']
+# Query: pick the yellow ring and place on the red bar
+    
+grasp the yellow ring
+move to default pose
+move to 10cm top of the center of the red bar
+move to 5 cm top of the center of the red bar
+open gripper
+move to 10cm top of the center of the red bar
+move to default pose
+#done
+
+
+objects = ['red bar', 'black bar', 'green bar', 'blue ring', 'yellow ring']
+# Query: pick the blue ring wait and guess the bar and place the blue ring to the <guessed_bar>
+grasp the blue ring
+move to default pose
+wait and guess the bar
+move to 10cm top of the center of the <guessed_bar>
+move to 5 cm top of the center of the <guessed_bar>
+open gripper
+move to 10cm top of the center of the <guessed_bar>
+move to default pose
+#done
+
+
+objects = ['red cup', 'black cup', 'blue cup', 'green block']
+# Query: pick the red cup and cover the green block.
+move 20 cm top of red cup
+move 3 cm up of red cup center
+close gripper
+move ee up by 10 cm
+move 15 cm top to the green block
+open gripper
+move ee up by 10 cm
+move to defautl position
+done
+
+
+objects = ['red cup', 'black cup', 'blue cup', 'green block']
+# Query: wait and guess the cup and pick the <guessed_cup> and lift it
+
+wait_and_guess    
+move 20 cm top of <guessed_cup> cup
+move 3 cm up of <guessed_cup>  cup center
+close gripper
+move ee up by 10 cm
+done
+
+
+
+
+
+objects = ['green button']
+# Query: Push the green button
+move to 5cm top of the green button
+close gripper
+move down 5cm
+move up 10cm
+# done
+
+
+objects = ['blue block', 'yellow block']
+# Query: Pick the blue block
+grasp the red block
+move to default pose
+# done
+
+objects = ['blue block', 'yellow block', 'stacking plane']
+# Query: place the blue block on the stacking plane
+move to 5cm on top of the stacking plane
+open gripper
+back to default pose
+# done
+
+objects = ['red cup', 'green block']
+# Query: Cover the green block with the red cup
+move to above the red cup
+close gripper
+move above the green block
+open gripper
+move to default pose
+# done
+
+objects = ['iPhone', 'airpods']
+# Query: Slide the iPhone toward the airpods
+push the iPhone towards the airpods
+move to default pose
+# done
+
+
+objects = ['charger']
+# Query: Unplug the charger
+grasp the charger
+move to default pose
+# done
+
+objects = ['box', 'red target']
+# Query: push the box from left back until it reached to red target
+move to 5 cm top to top-front right corner of the box
+rotate clockwise by 90 degree
+move to 10 cm left along the x-axis
+move to 5 cm left along the y-axis
+move to 10 cm below 
+close gripper
+repeat_until_target_reached: move 20 cm along the positive y-axis while maintaining current x and z coordinates
+#done
+
+objects = ['box', 'red target']
+# Query: push the box from right back until it reached to red target
+move to 5 cm top to top-front left corner of the box
+rotate clockwise by 90 degree
+move to 10 cm right along the x-axis
+move to 5 cm left along the y-axis
+move to 10 cm below 
+close gripper
+repeat_until_target_reached: move 20 cm along the positive y-axis while maintaining current x and z coordinates
+#done
+
+
+objects = [ "green block"]
+
+# pick the green block and handover to gripper
+move to 10cm above the green block and face the green block
+grasp the green block
+move ee 50cm above the stacking plane
+turn 90 degree along the x axis
+wait_until_grasp:gripper
+open gripper
+
+# done
+
+
+objects = [ "green block"]
+
+# wait and grasp the green block from gripper1
+wait_until_done: gripper1 
+turn 90 degree along the x axis
+move 20  cm right to the green block center
+grasp the green block
+wait_until_open_gripper: gripper1
+move ee down by 10cm
+# done
+
+

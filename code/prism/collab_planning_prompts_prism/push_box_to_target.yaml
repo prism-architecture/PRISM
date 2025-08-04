@@ -1,0 +1,15 @@
+visual_prompt: |
+  You are analyzing a tabletop scene with two robotic arms: 'gripper' (right arm) and 'gripper1' (left arm).
+  There is a box and a red target on the table. Each object is detected with a label and bounding box (x1, y1, x2, y2).
+
+  Your goal is to coordinate the robots to push the box to the red target from opposite sides.
+  Each robot must push the box from its respective side (left or right back), based on spatial proximity.
+
+  Follow these reasoning steps:
+  1. Use the bounding boxes to determine which gripper is closer to the left or right side of the box.
+  2. Assign pushing directions accordingly to avoid collision.
+  Use only spatial layout and bounding box geometry to make this decision.
+
+task_instruction: |
+  Task: Push the box to the red target.
+  

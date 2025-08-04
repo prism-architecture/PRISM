@@ -1,0 +1,36 @@
+visual_prompt: |
+  You are analyzing a tabletop scene involving two robotic arms: 'gripper' (right arm) and 'gripper1' (left arm).
+  The scene contains multiple objects (e.g., blocks, rings, containers, buttons, drawers, cups, etc.).
+  Each object is detected with a label and a bounding box in the format (x1, y1, x2, y2).
+
+  Your task is to generate a collaborative plan for the two robots based on the query and visual context.
+
+  Use spatial reasoning based on bounding box positions to:
+  - Assign distinct subtasks to each gripper based on proximity
+  - Respect physical constraints (e.g., stacking size order, drawer must open before insertion)
+  - Avoid collisions by ensuring only one robot acts in a shared space at a time
+  - Coordinate temporal dependencies (e.g., wait for drawer/lid to open before placing an item)
+  - Use front-view left/right mapping: 'gripper1' is LEFT, 'gripper' is RIGHT
+  - Use top-down layout when helpful for spatial arrangement
+
+  Do not assume fixed role assignments — infer responsibilities dynamically using the scene layout.
+  Output must be in natural language, one line per robot, clearly labeled.
+
+task_instruction: |
+  You are coordinating two robotic arms (gripper and gripper1) to execute a collaborative manipulation task on a tabletop.
+  - There are three movable blocks and one stacking plane.
+  - Each gripper should pick one distinct block.
+  - One gripper places its block on the stacking plane.
+  - The other gripper then stacks its block on top of the first.
+  - The stacking must avoid collisions and ensure synchronized collaboration.
+
+  
+  Instructions:
+
+  Step 1: Analyze bounding boxes to determine which blocks are closer to each gripper.
+  Step 2: Assign one block to each gripper such that they are spatially separated.
+  Step 3: Choose which block should be placed first onto the stacking plane (whichever is easier to access).
+  Step 4: Plan the actions for each gripper **so that they begin working in parallel if possible**:
+  - If there is no risk of collision, both grippers can pick their assigned blocks at the same time.
+  - The second gripper must **wait only before placing its block**, not before picking.
+

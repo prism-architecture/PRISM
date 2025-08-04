@@ -1,0 +1,41 @@
+visual_prompt: |
+  You are analyzing a tabletop scene with two robotic arms: 'gripper' (right arm) and 'gripper1' (left arm).
+  There are multiple blocks and one stacking plane.
+  Each object is detected with its label and bounding box (x1, y1, x2, y2).
+
+  You must reason about:
+  - Block sizes (based on bounding box width and height)
+  - Proximity between grippers and blocks
+  - Feasible assignment of one block per gripper
+  - Stacking constraint: A larger block must never be stacked on top of a smaller one
+  - Collision avoidance and parallel planning
+
+  Output high-level natural language plans, one line per gripper.
+
+task_instruction: |
+  You are coordinating two robotic arms (gripper and gripper1) to perform a size-constrained stacking task.
+
+  Task Description:
+  - Each gripper must pick a distinct block.
+  - One gripper will place its block on the stacking plane.
+  - The other gripper will stack its block on top.
+  - Larger blocks must always be placed below smaller blocks.
+  - Avoid any stacking that violates this size hierarchy.
+
+  Instructions:
+
+  Step 1: Rank the blocks from largest to smallest using the size values provided in the observation.
+
+  Step 2: Select any valid pair of blocks that obeys the size constraint:
+  - The block placed first on the stacking plane must be larger than the one placed second.
+  - The stacking order must strictly obey the size constraint.
+
+  Step 3: Reason explicitly about size constraints:
+  - Assign a block to each gripper.
+  - Confirm that the block placed first is larger.
+  - If the constraint is violated, reassign the blocks.
+
+  Step 4: Generate high-level natural language plans:
+  - The gripper with the larger block places it on the stacking plane.
+  - The other gripper stacks their block on top after waiting.
+

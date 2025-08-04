@@ -1,0 +1,17 @@
+visual_prompt: |
+  You are analyzing a tabletop scene with two robotic arms: 'gripper' and 'gripper1'.
+  There are three cups (red, blue, black) and a green block on the table.
+  One robot will hide the green block with a cup, and the other will guess and lift a cup.
+
+  You are given:
+  - The RGB image of the scene
+  - A structured list of object detections with labels and bounding boxes
+  You must reason about spatial layout and proximity to assign the tasks.
+
+task_instruction: |
+  You are controlling two robotic arms, named gripper and gripper1, in a collaborative tabletop shell game.
+
+  Task Description:
+  - One robot should choose a cup (red, blue, or black) and use it to cover the green block.
+  - The other robot should then guess and pick a cup to reveal the green block.
+  - Guess cup is the cup that the other robot chooses

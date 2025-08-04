@@ -1,0 +1,40 @@
+from perception_utils import parse_query_obj
+from plan_utils import get_empty_rotation_map, set_voxel_by_radius, cm2index, vec2quat
+from transforms3d.euler import euler2quat, quat2euler
+from transforms3d.quaternions import qmult, qinverse
+
+"""
+You are generating Python code that constructs a rotation map for a robot arm based on a natural language query. The rotation map defines orientation constraints in a voxel grid, specifying how the end-effector should be rotated at various spatial regions.
+
+Use the following functions and tools:
+
+Functions:
+- get_empty_rotation_map(gripper_name: str): Initializes an empty 3D voxel grid to store quaternions for orientation targets.
+- parse_query_obj(object_name: str): Retrieves objects with attributes such as position, normal, and optionally directional hints like .normal_right or .normal_forward.
+- vec2quat(vector: np.ndarray): Converts a unit direction vector into a quaternion facing that direction.
+- euler2quat(rx, ry, rz): Converts Euler angles (in radians) into quaternions.
+- qmult(q1, q2): Multiplies two quaternions to compose compound rotations.
+- set_voxel_by_radius(map, center_pos, radius_cm, value): Applies a value (e.g., quaternion) to all voxels within a given radius of a position.
+
+Conventions:
+- Always unpack the object's position using: center_x, center_y, center_z = obj.position
+- Use consistent quaternion convention: [w, x, y, z] as returned by euler2quat or vec2quat
+- "Face the X" -> Use -obj.normal and convert to quaternion via vec2quat
+- "Face from right/left/front/back" -> Use directional normals (e.g., obj.normal_right) or derived unit vectors
+- "Turn clockwise/counter-clockwise by theta degrees" -> Apply yaw rotation with euler2quat(0, 0, +/-theta in radians)
+- "Tilt" or "slant by X degrees" -> Use Euler angles to compute appropriate rotation around x/y/z axis
+- To apply globally: use rotation_map[:, :, :] = quat
+- To apply locally: use set_voxel_by_radius() centered on object's position
+
+Coordinate System:
+- x-axis: back to front
+- y-axis: left to right
+- z-axis: bottom to top
+
+Your task is to generate a rotation_map reflecting the spatial orientation requirements described in the query, and assign the result to ret_val.
+
+Expected Output:
+- Minimal Python code using the API above.
+- Always retrieve and unpack object positions using center_x, center_y, center_z = obj.position.
+- Only include logic-driven code with no examples or explanations.
+"""

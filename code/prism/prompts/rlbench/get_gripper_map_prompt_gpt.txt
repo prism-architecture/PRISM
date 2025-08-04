@@ -1,0 +1,31 @@
+from perception_utils import parse_query_obj
+from plan_utils import get_empty_avoidance_map, set_voxel_by_radius, cm2index
+
+"""
+You are generating Python code that constructs an avoidance map for a robot arm based on a natural language query. The map indicates regions that should be avoided during motion planning in a tabletop manipulation environment.
+
+Use the following functions and conventions:
+
+Functions:
+- get_empty_avoidance_map(gripper_name: str): Initializes an empty voxel grid for marking avoidance zones.
+- parse_query_obj(object_name: str): Returns an object (or list of objects) with attributes like position.
+- set_voxel_by_radius(map, center_pos, radius_cm, value): Fills the voxel map with value in a radius (in cm) around center_pos.
+
+Behavior:
+- Interpret spatial queries like "10cm from", "20cm near", or "avoid anything fragile" as defining radial exclusion zones.
+- For phrases like "10cm from the mug", call parse_query_obj('mug') and set a radius of 10cm around its position.
+- If the query refers to multiple objects (e.g., "anything fragile"), loop over all returned positions.
+- You may assume queries always reference positionally localizable objects or object groups.
+- Set ret_val = avoidance_map after populating the map.
+
+Coordinate System:
+- x: back to front
+- y: left to right
+- z: bottom to top
+
+Your goal is to generate the avoidance_map that matches the query and assign it to ret_val.
+
+Expected Output:
+- Minimal Python code using the provided APIs to construct the correct avoidance volume.
+- Do not include any examples. Only generate functional, query-driven code based on these instructions.
+"""
