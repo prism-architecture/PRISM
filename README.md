@@ -8,7 +8,7 @@
   <img src="./images/prism_example.png" width="60%">
 </p>
 
-Multi‑agent systems hold the promise of distributed, parallel execution in domains ranging from manufacturing to assistive care. However, enabling multiple agents to follow natural language instructions in dynamic environments remains a challenging problem due to the lack of mechanisms for grounding language into temporally synchronized, vision-aware action plans. To overcome these limitations and enable robust coordination among multiple agents, we present a hierarchical vision-language framework that grounds natural language instructions into synchronized multi-agent workflows by dynamically injecting synchronization constraints via predicate reasoning over multimodal observations and execution history. Additionally, to enable systematic evaluation of multi-agent coordination, we introduce RLBench-COLLAB, an extended benchmark comprising ten two-robot manipulation tasks spanning sequential coordination, parallel coordination, coupled interaction, and behavior-aware reasoning. Our extensive experiments suggest that the proposed method significantly outperforms state-of-the-art planning frameworks, achieving an average task success rate of 72\% and an average subtask success rate of 89\%. Our comprehensive evaluation and results demonstrate that the proposed method bridges the gap between adaptability and temporal coordination in multi-agent systems, enabling scalable, real-time collaboration in dynamic, open-ended environments.
+Multi‑agent systems hold the promise of distributed, parallel execution in domains ranging from manufacturing to assistive care. However, enabling multiple agents to follow natural language instructions in dynamic environments remains a challenging problem due to the lack of mechanisms for grounding language into temporally synchronized, vision-aware action plans. To overcome these limitations and enable robust coordination among multiple agents, we present a hierarchical vision-language framework that grounds natural language instructions into synchronized multi-agent workflows by dynamically injecting synchronization constraints via predicate reasoning over multimodal observations and execution history. Additionally, to enable systematic evaluation of multi-agent coordination, we introduce RLBench-COLLAB, an extended benchmark comprising ten two-robot manipulation tasks spanning sequential coordination, parallel coordination, coupled interaction, and behavior-aware reasoning. Our extensive experiments suggest that the proposed method significantly outperforms state-of-the-art planning frameworks, achieving an average task success rate of 72% and an average subtask success rate of 89%. Our comprehensive evaluation and results demonstrate that the proposed method bridges the gap between adaptability and temporal coordination in multi-agent systems, enabling scalable, real-time collaboration in dynamic, open-ended environments.
 
 ### RLBench-COLLAB Task Suite
 
@@ -26,9 +26,52 @@ Collaborative storytelling testbed where two humans and a robot (Sam) take turns
 
 ### Successful Task Execution Results
 
-<p align="center">
-  <img src="./images/push_box.gif" width="20%">
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/stack_blocks.gif" width="160px"><br/>
+      Stack Blocks
+    </td>
+    <td align="center">
+      <img src="./images/pyramid_stacking.gif" width="160px"><br/>
+      Pyramid Stacking
+    </td>
+    <td align="center">
+      <img src="./images/put_into_drawer.gif" width="160px"><br/>
+      Put into Drawer
+    </td>
+    <td align="center">
+      <img src="./images/put_into_saucepan.gif" width="160px"><br/>
+      Put into Saucepan
+    </td>
+    <td align="center">
+      <img src="./images/push_buttons.gif" width="160px"><br/>
+      Push Buttons
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/shell_game.gif" width="160px"><br/>
+      Shell Game
+    </td>
+    <td align="center">
+      <img src="./images/sort_items.gif" width="160px"><br/>
+      Sort Items
+    </td>
+    <td align="center">
+      <img src="./images/handover_item.gif" width="160px"><br/>
+      Handover Item
+    </td>
+    <td align="center">
+      <img src="./images/insert_ring.gif" width="160px"><br/>
+      Insert Ring
+    </td>
+    <td align="center">
+      <img src="./images/push_box.gif" width="160px"><br/>
+      Push Box
+    </td>
+  </tr>
+</table>
 
 ### Experiments and Results
 
