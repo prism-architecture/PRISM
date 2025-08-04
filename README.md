@@ -29,45 +29,45 @@ Collaborative storytelling testbed where two humans and a robot (Sam) take turns
 <table>
   <tr>
     <td align="center">
-      <img src="./images/stack_block.gif" width="512px"><br/>
+      <img src="./images/stack_block.gif" width="300px"><br/>
       Stack Blocks
     </td>
     <td align="center">
-      <img src="./images/pyramid_stacking.gif" width="512px"><br/>
+      <img src="./images/pyramid_stacking.gif" width="300px"><br/>
       Pyramid Stacking
     </td>
     <td align="center">
-      <img src="./images/put_into_drawer.gif" width="512px"><br/>
+      <img src="./images/put_into_drawer.gif" width="300px"><br/>
       Put into Drawer
     </td>
     <td align="center">
-      <img src="./images/put_into_saucepan.gif" width="512px"><br/>
+      <img src="./images/put_into_saucepan.gif" width="300px"><br/>
       Put into Saucepan
     </td>
     <td align="center">
-      <img src="./images/push_buttons.gif" width="512px"><br/>
+      <img src="./images/push_buttons.gif" width="300px"><br/>
       Push Buttons
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="./images/shell_game.gif" width="512px"><br/>
+      <img src="./images/shell_game.gif" width="300px"><br/>
       Shell Game
     </td>
     <td align="center">
-      <img src="./images/sort_items.gif" width="512px"><br/>
+      <img src="./images/sort_items.gif" width="300px"><br/>
       Sort Items
     </td>
     <td align="center">
-      <img src="./images/handover_item.gif" width="512px"><br/>
+      <img src="./images/handover_item.gif" width="300px"><br/>
       Handover Item
     </td>
     <td align="center">
-      <img src="./images/insert_ring.gif" width="512px"><br/>
+      <img src="./images/insert_ring.gif" width="300px"><br/>
       Insert Ring
     </td>
     <td align="center">
-      <img src="./images/push_box.gif" width="512px"><br/>
+      <img src="./images/push_box.gif" width="300px"><br/>
       Push Box
     </td>
   </tr>
