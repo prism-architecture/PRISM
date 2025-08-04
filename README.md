@@ -1,6 +1,6 @@
 [**Website**](https://github.com/aaai2026-review/preference-aware/)
 | [**Code**](https://github.com/aaai2026-review/preference-aware/tree/main/Code/)
-| [**Story Dataset**](https://github.com/aaai2026-review/preference-aware/tree/main/story_dataset/)
+
 
 ## A Vision-Language Architecture for Hierarchical Multi-Agent Coordination
 
