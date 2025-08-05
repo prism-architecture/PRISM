@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ```
 
 # VLM
-Obtain an [OpenAI](https://github.com/stepjam/RLBench#install) OpenAI API key.
+Obtain an [OpenAI](https://openai.com/index/openai-api/) OpenAI API key.
 
 
 ## Quickstart
