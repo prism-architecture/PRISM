@@ -24,7 +24,7 @@ def detect_objects(
     img_path: str = None,
     canonical_labels: list = None,
     grounding_model: str = "IDEA-Research/grounding-dino-tiny",
-    sam2_checkpoint: str = "/home/sujan/VoxPoser_Feb 28/VoxPoser/src/Grounded-SAM-2/checkpoints/sam2.1_hiera_large.pt",
+    sam2_checkpoint: str = "./src/Grounded-SAM-2/checkpoints/sam2.1_hiera_large.pt",
     sam2_model_config: str = "configs/sam2.1/sam2.1_hiera_l.yaml",
     output_dir: str = "outputs/test_sam2.1",
     no_dump_json: bool = False,
