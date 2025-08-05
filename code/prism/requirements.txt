@@ -1,1 +1,7 @@
+openai
+imageio
+numpy
+Pillow
+pyyaml
+git+https://github.com/openai/CLIP.git  # if using CLIP-based vision
 
