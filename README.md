@@ -1,6 +1,3 @@
-[**Website**](https://github.com/prism-architecture/PRISM)
-| [**Code**](https://github.com/aaai2026-review/preference-aware/tree/main/Code/)
-
 
 ## A Vision-Language Architecture for Hierarchical Multi-Agent Coordination
 
