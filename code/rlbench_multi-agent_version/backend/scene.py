@@ -106,7 +106,7 @@ class Scene(object):
                  robot_2: Robot = None,
                  obs_config: ObservationConfig = ObservationConfig(),
                  robot_setup: str = 'panda',
-                 save_directory:str = "/home/sujan/VoxPoser_Feb 28/VoxPoser/data/test/"):
+                 save_directory:str = "/prism/data/test/"):
         
         self.save_directory = save_directory
         
