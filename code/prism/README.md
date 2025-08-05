@@ -60,6 +60,6 @@ Obtain an [OpenAI](https://openai.com/index/openai-api/) OpenAI API key.
 ```
 For task configuration, see task_configs.py
 Test RLBench-COLLAB Tasks with test_code_all_task.py
-Run a single episode of a task with all_task_runner.py
+Run a single episode of a task with task_runner.py
 ```
 
