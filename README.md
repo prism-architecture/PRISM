@@ -22,7 +22,7 @@ We propose PRISM: Planning and Reasoning in Synchronized Multi-agent tasks.
   <img src="./images/prism_framework.png" width="80%">
 </p>
 
-### Successful Task Execution Results
+### Successful Task Execution Examples
 
 <table>
   <tr>
