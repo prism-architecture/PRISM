@@ -42,4 +42,4 @@ def process_all_episodes(root_path):
             print(f"Skipping (no recording folder): {episode_path}")
 
 # Example usage
-process_all_episodes("/home/sujan/VoxPoser_Feb 28/VoxPoser/data/open_and_put_item_voxposer_new/")
+process_all_episodes("give-edisode-link-here-from-data-folder")
